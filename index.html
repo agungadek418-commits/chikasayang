@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday</title>
+<meta name="theme-color" content="#171413">
+<meta name="description" content="A little birthday gift, made with love.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;700&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                ink: '#171413', ink2: '#211B19', wine: '#780D12', deep: '#650B10',
+                ruby: '#A51E27', blush: '#D58B91', cream: '#F3E8DF', muted: '#B9AAA3'
+            },
+            fontFamily: {
+                display: ['"Playfair Display"', 'serif'],
+                hand: ['"Patrick Hand"', 'cursive'],
+                sans: ['"DM Sans"', 'sans-serif'],
+                script: ['Caveat', 'cursive']
+            }
+        }
+    }
+};
+</script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-ink text-cream font-sans antialiased">
+
+<!-- ============ SVG SPRITE (stickers & icons) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+    <symbol id="heart" viewBox="0 0 100 92"><path fill="currentColor" d="M50 90C18 66 4 48 4 30 4 16 15 4 29 4c9 0 17 5 21 13C54 9 62 4 71 4c14 0 25 12 25 26 0 18-14 36-46 60z"/></symbol>
+
+    <symbol id="sparkle" viewBox="0 0 100 100"><path fill="currentColor" d="M50 4C54 34 66 46 96 50 66 54 54 66 50 96 46 66 34 54 4 50 34 46 46 34 50 4z"/></symbol>
+
+    <symbol id="star5" viewBox="0 0 100 100"><path d="M50 8l12 27 29 3-22 20 7 29-26-15-26 15 7-29L9 38l29-3z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/></symbol>
+
+    <symbol id="cherry" viewBox="0 0 100 100">
+        <path d="M30 70C34 45 44 22 62 8M70 72C68 48 64 26 62 8" fill="none" stroke="#5b6b3a" stroke-width="3" stroke-linecap="round"/>
+        <path d="M62 8c8-4 18-2 24 4-10 2-18 0-24-4z" fill="#5b7a3a"/>
+        <circle cx="28" cy="74" r="17" fill="#8e1119"/><circle cx="70" cy="76" r="17" fill="#a51e27"/>
+        <circle cx="22" cy="68" r="4.5" fill="#fff" opacity=".45"/><circle cx="64" cy="70" r="4.5" fill="#fff" opacity=".45"/>
+    </symbol>
+
+    <!-- Original web-pattern enamel heart pin (hero sticker) -->
+    <symbol id="webheart" viewBox="0 0 100 92">
+        <clipPath id="heartClip"><path d="M50 90C18 66 4 48 4 30 4 16 15 4 29 4c9 0 17 5 21 13C54 9 62 4 71 4c14 0 25 12 25 26 0 18-14 36-46 60z"/></clipPath>
+        <path d="M50 90C18 66 4 48 4 30 4 16 15 4 29 4c9 0 17 5 21 13C54 9 62 4 71 4c14 0 25 12 25 26 0 18-14 36-46 60z" fill="#a51e27"/>
+        <g clip-path="url(#heartClip)" fill="none" stroke="#3a070b" stroke-width="2" stroke-linecap="round">
+            <path d="M50 38L50 100M50 38L-5 8M50 38L105 8M50 38L-5 52M50 38L105 52M50 38L14 92M50 38L86 92"/>
+            <path d="M50 38m-14 0a14 14 0 0 1 28 0M50 38m-26 -2q26 14 52 0M50 38m-38 2q38 26 76 0M50 38m-50 4q50 42 100 0"/>
+        </g>
+        <path d="M50 90C18 66 4 48 4 30 4 16 15 4 29 4c9 0 17 5 21 13C54 9 62 4 71 4c14 0 25 12 25 26 0 18-14 36-46 60z" fill="none" stroke="#d9d4d0" stroke-width="4"/>
+    </symbol>
+
+    <symbol id="strawberry" viewBox="0 0 100 100">
+        <path d="M50 94C24 80 10 56 17 38c4-10 17-12 33-8 16-4 29-2 33 8 7 18-7 42-33 56z" fill="#d6293a"/>
+        <path d="M28 30l22-14 22 14-12 5-10-7-10 7z" fill="#4c7a3a"/>
+        <g fill="#f8e7c9"><ellipse cx="34" cy="50" rx="2" ry="3"/><ellipse cx="50" cy="46" rx="2" ry="3"/><ellipse cx="66" cy="50" rx="2" ry="3"/><ellipse cx="42" cy="64" rx="2" ry="3"/><ellipse cx="58" cy="64" rx="2" ry="3"/><ellipse cx="50" cy="78" rx="2" ry="3"/></g>
+        <ellipse cx="32" cy="42" rx="4" ry="7" fill="#fff" opacity=".25" transform="rotate(20 32 42)"/>
+    </symbol>
+
+    <symbol id="bear" viewBox="0 0 100 124">
+        <circle cx="26" cy="22" r="11" fill="#b98a62"/><circle cx="74" cy="22" r="11" fill="#b98a62"/>
+        <circle cx="26" cy="22" r="5.5" fill="#d9b48f"/><circle cx="74" cy="22" r="5.5" fill="#d9b48f"/>
+        <ellipse cx="50" cy="90" rx="27" ry="28" fill="#b98a62"/>
+        <ellipse cx="50" cy="94" rx="15" ry="18" fill="#d9b48f"/>
+        <ellipse cx="22" cy="84" rx="9" ry="15" fill="#b98a62" transform="rotate(25 22 84)"/>
+        <ellipse cx="78" cy="84" rx="9" ry="15" fill="#b98a62" transform="rotate(-25 78 84)"/>
+        <ellipse cx="34" cy="115" rx="11" ry="8" fill="#b98a62"/><ellipse cx="66" cy="115" rx="11" ry="8" fill="#b98a62"/>
+        <circle cx="50" cy="42" r="28" fill="#c79a72"/>
+        <ellipse cx="50" cy="52" rx="13" ry="10" fill="#e3c4a1"/>
+        <ellipse cx="50" cy="48" rx="4.5" ry="3.2" fill="#4a2f1d"/>
+        <path d="M50 51v4M45 56q5 4 10 0" stroke="#4a2f1d" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="39" cy="38" r="3" fill="#2f1d12"/><circle cx="61" cy="38" r="3" fill="#2f1d12"/>
+        <path d="M42 70l8 5 8-5-8-3z" fill="#a51e27"/>
+    </symbol>
+
+    <symbol id="camera" viewBox="0 0 100 76">
+        <rect x="4" y="14" width="92" height="58" rx="8" fill="#d8d2cc"/>
+        <rect x="4" y="14" width="92" height="16" rx="8" fill="#2a2523"/>
+        <rect x="14" y="5" width="22" height="12" rx="3" fill="#8f8882"/>
+        <circle cx="52" cy="46" r="21" fill="#2a2523"/><circle cx="52" cy="46" r="14" fill="#4a4540"/><circle cx="52" cy="46" r="7" fill="#1a1716"/><circle cx="47" cy="41" r="3" fill="#fff" opacity=".5"/>
+        <rect x="76" y="20" width="12" height="8" rx="2" fill="#f3e8df"/>
+    </symbol>
+
+    <symbol id="cassette" viewBox="0 0 100 64">
+        <rect x="2" y="2" width="96" height="60" rx="6" fill="#2d2624" stroke="#f3e8df" stroke-width="2"/>
+        <rect x="12" y="8" width="76" height="30" rx="3" fill="#f3e8df"/>
+        <rect x="12" y="8" width="76" height="9" fill="#a51e27"/>
+        <circle cx="32" cy="29" r="7" fill="#2d2624"/><circle cx="68" cy="29" r="7" fill="#2d2624"/>
+        <circle cx="32" cy="29" r="3" fill="#f3e8df"/><circle cx="68" cy="29" r="3" fill="#f3e8df"/>
+        <path d="M22 62l6-14h44l6 14z" fill="#4a4240"/>
+    </symbol>
+
+    <symbol id="lily" viewBox="0 0 120 120">
+        <g transform="translate(60 62)">
+            <g fill="#eaa5b8" stroke="#c9607f" stroke-width="1.5" stroke-linejoin="round">
+                <ellipse cx="0" cy="-32" rx="13" ry="30"/>
+                <ellipse cx="0" cy="-32" rx="13" ry="30" transform="rotate(60)"/>
+                <ellipse cx="0" cy="-32" rx="13" ry="30" transform="rotate(120)"/>
+                <ellipse cx="0" cy="-32" rx="13" ry="30" transform="rotate(180)"/>
+                <ellipse cx="0" cy="-32" rx="13" ry="30" transform="rotate(240)"/>
+                <ellipse cx="0" cy="-32" rx="13" ry="30" transform="rotate(300)"/>
+            </g>
+            <g stroke="#c9607f" stroke-width="1.5" opacity=".55" fill="none">
+                <path d="M0 0v-52"/><path d="M0 0v-52" transform="rotate(60)"/><path d="M0 0v-52" transform="rotate(120)"/>
+                <path d="M0 0v-52" transform="rotate(180)"/><path d="M0 0v-52" transform="rotate(240)"/><path d="M0 0v-52" transform="rotate(300)"/>
+            </g>
+            <g stroke="#8a2b4a" stroke-width="2" stroke-linecap="round" fill="none"><path d="M0 0L-9 -28M0 0L3 -32M0 0L12 -24"/></g>
+            <g fill="#b0522a"><circle cx="-9" cy="-29" r="3.2"/><circle cx="3" cy="-33" r="3.2"/><circle cx="12" cy="-25" r="3.2"/></g>
+        </g>
+    </symbol>
+
+    <symbol id="flower5" viewBox="0 0 100 100">
+        <g fill="currentColor" stroke="rgba(0,0,0,.14)" stroke-width="1.5">
+            <circle cx="50" cy="24" r="20"/><circle cx="74.7" cy="42" r="20"/><circle cx="65.3" cy="71" r="20"/>
+            <circle cx="34.7" cy="71" r="20"/><circle cx="25.3" cy="42" r="20"/>
+        </g>
+        <circle cx="50" cy="52" r="9" fill="#f6d77a"/><circle cx="50" cy="52" r="4" fill="#d9a93c"/>
+    </symbol>
+
+    <!-- Line icons -->
+    <symbol id="i-0" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14c1 2 3 3 4 3s3-1 4-3"/></g><circle cx="9" cy="10" r="1.1" fill="currentColor"/><circle cx="15" cy="10" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="i-1" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></g></symbol>
+    <symbol id="i-2" viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9-9.2C1.6 8 4 5 7 5c2 0 3.4 1 5 3 1.6-2 3-3 5-3 3 0 5.4 3 4 6.8-2 4.8-9 9.2-9 9.2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-3" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M5 20c0-5 3-8 7-8s7 3 7 8"/><path d="M4 13c3 4 13 4 16 0"/></g></symbol>
+    <symbol id="i-4" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 10q1-1.6 2 0M14 10q1-1.6 2 0"/><path d="M7.5 14h9c0 3-2 5-4.5 5S7.5 17 7.5 14z"/></g></symbol>
+    <symbol id="i-5" viewBox="0 0 24 24"><path d="M12 12c-2-3-4-4-6-4a4 4 0 000 8c2 0 4-1 6-4zm0 0c2 3 4 4 6 4a4 4 0 000-8c-2 0-4 1-6 4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="M6 5l9 7-9 7zM17 5h2v14h-2z" fill="currentColor"/></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><path d="M18 5l-9 7 9 7zM5 5h2v14H5z" fill="currentColor"/></symbol>
+    <symbol id="i-vol" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 8.5a5 5 0 010 7M18.5 6a8.5 8.5 0 010 12"/></g></symbol>
+    <symbol id="i-mute" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M17 9l5 6M22 9l-5 6"/></g></symbol>
+    <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><path d="M9 18V6l10-2v12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="18" r="2.6" fill="currentColor"/><circle cx="17" cy="16" r="2.6" fill="currentColor"/></symbol>
+</defs>
+</svg>
+
+<!-- Overlays -->
+<div class="grain" aria-hidden="true"></div>
+<div id="fx" class="fx-layer" aria-hidden="true"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header id="nav" class="nav">
+    <div class="nav-inner">
+        <a href="#hero" class="nav-brand" data-scroll>
+            <svg class="w-4 h-4 text-ruby"><use href="#heart"/></svg>
+            <span id="navBrand">For You</span>
+        </a>
+        <nav class="nav-links" aria-label="Main">
+            <a href="#memories" data-scroll>Memories</a>
+            <a href="#songs" data-scroll>Songs</a>
+            <a href="#reasons" data-scroll>Reasons</a>
+            <a href="#letter" data-scroll>Letter</a>
+            <a href="#gallery" data-scroll>Gallery</a>
+            <a href="#openwhen" data-scroll>Open When</a>
+            <a href="#coupons" data-scroll>Coupons</a>
+            <a href="#scratch" data-scroll>Scratch</a>
+            <a href="#secret" data-scroll>Secret</a>
+        </nav>
+        <button id="navToggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <div id="navDrawer" class="nav-drawer" hidden>
+        <a href="#memories" data-scroll>Memories</a>
+        <a href="#songs" data-scroll>Songs</a>
+        <a href="#reasons" data-scroll>Reasons</a>
+        <a href="#letter" data-scroll>Letter</a>
+        <a href="#gallery" data-scroll>Gallery</a>
+        <a href="#openwhen" data-scroll>Open When...</a>
+        <a href="#coupons" data-scroll>Love Coupons</a>
+        <a href="#scratch" data-scroll>Scratch Cards</a>
+        <a href="#secret" data-scroll>Secret Message</a>
+        <p class="nd-foot">made with <span>♥</span> just for you</p>
+    </div>
+</header>
+
+<main>
+
+<!-- ============ 01 HERO ============ -->
+<section id="hero" class="hero relative overflow-hidden">
+    <div class="mx-auto max-w-6xl px-5 pt-28 pb-16 md:pt-32 lg:pb-24 grid lg:grid-cols-[1fr_1fr] gap-12 items-center min-h-screen">
+
+        <div class="relative order-2 lg:order-1 text-center lg:text-left">
+            <svg class="spark absolute -top-2 left-2 w-6 h-6 text-cream/80 hidden lg:block"><use href="#sparkle"/></svg>
+            <p id="heroEyebrow" class="font-script text-2xl md:text-3xl text-blush reveal"></p>
+            <p class="font-hand text-lg text-muted mt-1 reveal">for <span id="heroName" class="text-cream"></span></p>
+            <h1 id="heroTitle" class="font-display font-bold text-4xl sm:text-5xl lg:text-[3.6rem] leading-[1.08] mt-4 reveal"></h1>
+            <p id="heroMessage" class="font-hand text-xl md:text-[1.4rem] leading-relaxed text-cream/90 mt-6 max-w-xl mx-auto lg:mx-0 reveal"></p>
+
+            <div class="mt-8 flex flex-wrap gap-3 justify-center lg:justify-start reveal">
+                <button type="button" id="btnOpen" class="btn btn-solid">Open Your Surprise</button>
+                <button type="button" id="btnLove" class="btn btn-outline">
+                    <svg class="w-4 h-4"><use href="#heart"/></svg> Send Some Love
+                </button>
+            </div>
+            <p class="font-hand text-muted mt-3 text-base reveal">love sent: <span id="loveCount">0</span></p>
+
+            <div id="countdown" class="countdown mt-8 reveal" aria-live="off">
+                <p id="cdLabel" class="font-hand text-blush text-lg mb-2">your birthday is in</p>
+                <div id="cdBoxes" class="cd-boxes">
+                    <div><b id="cdDays">0</b><span>days</span></div>
+                    <div><b id="cdHours">0</b><span>hours</span></div>
+                    <div><b id="cdMins">0</b><span>mins</span></div>
+                    <div><b id="cdSecs">0</b><span>secs</span></div>
+                </div>
+                <p class="font-hand text-muted mt-3 text-base"><span id="daysTogether">0</span> days of being together, and counting</p>
+            </div>
+        </div>
+
+        <div class="order-1 lg:order-2 relative">
+            <div id="collage" class="collage">
+                <!-- photos injected by JS -->
+                <svg class="stk stk-web"><use href="#webheart"/></svg>
+                <svg class="stk stk-cherry"><use href="#cherry"/></svg>
+                <svg class="stk stk-star"><use href="#star5"/></svg>
+                <svg class="stk stk-heart1"><use href="#heart"/></svg>
+                <svg class="stk stk-heart2"><use href="#heart"/></svg>
+                <svg class="stk stk-sp1 spark"><use href="#sparkle"/></svg>
+                <svg class="stk stk-sp2 spark"><use href="#sparkle"/></svg>
+                <svg class="stk stk-sp3 spark"><use href="#sparkle"/></svg>
+                <span class="tape tape-a"></span><span class="tape tape-b"></span>
+            </div>
+        </div>
+    </div>
+    <a href="#memories" data-scroll class="scroll-cue" aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- ============ 02 OUR MEMORIES ============ -->
+<section id="memories" class="section memories overflow-hidden">
+    <div class="film-strip fs-tl" data-dir="up" aria-hidden="true"><div class="fs-track"></div></div>
+    <div class="film-strip fs-br" data-dir="down" aria-hidden="true"><div class="fs-track"></div></div>
+    <div class="mx-auto max-w-4xl px-5 relative z-[1]">
+        <div class="text-center mb-8 reveal">
+            <p class="eyebrow">our memories</p>
+            <h2 id="memoriesTitle" class="font-display text-3xl md:text-5xl leading-tight mt-2"></h2>
+        </div>
+        <div class="cine reveal" id="memoriesPlayer"></div>
+        <p id="memoriesCaption" class="text-center font-hand text-xl md:text-2xl text-cream/90 mt-7 reveal"></p>
+    </div>
+</section>
+
+<!-- ============ 03 SONGS THAT REMIND ME OF YOU ============ -->
+<section id="songs" class="music-section">
+    <div class="sg-stage">
+
+        <!-- kiri: kartu player -->
+        <div class="sg-left">
+            <div class="sg-card reveal" id="playerCard">
+                <img id="cardCover" class="sg-card-cover" alt="Album cover">
+                <div class="sg-card-title" id="cardTitle">Song One</div>
+                <div class="sg-card-artist" id="cardArtist">Artist One</div>
+                <div id="cardBar" class="sg-card-bar" tabindex="0" role="slider" aria-label="Seek current song" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <span id="cardFill" class="sg-card-fill"></span>
+                </div>
+                <div class="sg-card-time"><span id="cardCur">0:00</span> / <span id="cardDur">--:--</span></div>
+                <div class="sg-card-ctl">
+                    <button type="button" id="cardPrev" class="sg-card-btn" aria-label="Previous song"><svg><use href="#i-prev"/></svg></button>
+                    <button type="button" id="cardPlay" class="sg-card-btn sg-card-main" aria-label="Play or pause">
+                        <svg class="i-play"><use href="#i-play"/></svg>
+                        <svg class="i-pause"><use href="#i-pause"/></svg>
+                    </button>
+                    <button type="button" id="cardNext" class="sg-card-btn" aria-label="Next song"><svg><use href="#i-next"/></svg></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- tengah: piringan hitam besar -->
+        <div class="sg-vinyl">
+            <!-- dekorasi mobile -->
+            <span class="sg-bgword font-script" aria-hidden="true">us</span>
+            <div class="sg-tag" aria-hidden="true">
+                <span id="sgTagA" class="sg-tag-a">side A</span>
+                <span id="sgTagB" class="sg-tag-b font-hand">for you</span>
+            </div>
+            <svg class="sg-twinkle sg-tw1" aria-hidden="true"><use href="#sparkle"/></svg>
+            <svg class="sg-twinkle sg-tw2" aria-hidden="true"><use href="#sparkle"/></svg>
+            <svg class="sg-twinkle sg-tw3" aria-hidden="true"><use href="#sparkle"/></svg>
+
+            <div id="vinylWrap" class="vinyl-wrap">
+                <div class="vinyl-orbit vo1" aria-hidden="true">
+                    <svg class="vo-dot vo-d1"><use href="#heart"/></svg>
+                    <svg class="vo-dot vo-d2"><use href="#sparkle"/></svg>
+                </div>
+                <div class="vinyl-orbit vo2" aria-hidden="true">
+                    <svg class="vo-dot vo-d3"><use href="#sparkle"/></svg>
+                    <svg class="vo-dot vo-d4"><use href="#heart"/></svg>
+                </div>
+                <div class="vinyl-disc" id="vinylDisc">
+                    <div class="vinyl-label" id="vinylLabel">
+                        <span class="vinyl-hole"></span>
+                    </div>
+                </div>
+                <div class="vinyl-sheen"></div>
+                <div class="tonearm"><i></i></div>
+                <div id="notes" class="notes"></div>
+            </div>
+
+            <!-- petunjuk + pita marquee (mobile) -->
+            <div class="sg-hint font-hand" aria-hidden="true">
+                <span class="sg-hint-idle"><svg><use href="#i-play"/></svg><span id="sgHintIdle">tap the record to play</span></span>
+                <span class="sg-hint-live"><span class="eq"><i></i><i></i><i></i></span><span id="sgHintLive">now spinning</span></span>
+            </div>
+            <div class="sg-marquee" aria-hidden="true"><div id="sgMarqueeTrack" class="sg-marquee-track"></div></div>
+        </div>
+
+        <!-- kanan: judul + list lagu -->
+        <div class="sg-right">
+            <div class="sg-right-inner">
+                <div class="reveal">
+                    <h2 class="songs-title">
+                        <span id="songsL1" class="font-script"></span><br>
+                        <span id="songsL2" class="font-hand"></span>
+                    </h2>
+                    <p id="songsSub" class="sg-sub font-hand"></p>
+                </div>
+                <ol id="playlist" class="playlist" aria-label="Playlist"></ol>
+            </div>
+        </div>
+
+        <!-- bar bawah -->
+        <div class="sg-bar">
+            <div class="sg-bar-main">
+                <button type="button" id="prevBtn" class="ctl" aria-label="Previous song"><svg><use href="#i-prev"/></svg></button>
+                <div class="now-text">
+                    <span class="font-hand text-sm text-blush">now playing</span>
+                    <span id="nowTitle" class="font-hand text-lg leading-tight">tap a song to start</span>
+                </div>
+                <button type="button" id="nextBtn" class="ctl" aria-label="Next song"><svg><use href="#i-next"/></svg></button>
+                <span id="trackCount" class="sg-count">01 / 03</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 04 REASONS ============ -->
+<section id="reasons" class="section">
+    <div class="mx-auto max-w-6xl px-5">
+        <div class="text-center mb-12 reveal">
+            <p id="reasonsSub" class="eyebrow"></p>
+            <h2 id="reasonsTitle" class="font-display text-3xl md:text-5xl mt-2"></h2>
+        </div>
+        <div id="reasonsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-9"></div>
+    </div>
+</section>
+
+<!-- ============ 05 LOVE LETTER ============ -->
+<section id="letter" class="section">
+    <div class="mx-auto max-w-3xl px-5">
+        <div class="text-center mb-10 reveal">
+            <p class="eyebrow">from my heart to yours</p>
+            <h2 id="letterTitle" class="font-display text-3xl md:text-5xl mt-2"></h2>
+        </div>
+        <div id="letterWrap" class="letter-wrap">
+        <div id="ltEnvStage" class="lt-env-stage">
+            <svg class="spark lt-sp lt-sp1" aria-hidden="true"><use href="#sparkle"/></svg>
+            <svg class="spark lt-sp lt-sp2" aria-hidden="true"><use href="#sparkle"/></svg>
+            <svg class="spark lt-sp lt-sp3" aria-hidden="true"><use href="#sparkle"/></svg>
+            <button type="button" id="ltEnvBtn" class="lt-env-btn" aria-label="Tap to open your letter">
+                <span class="envelope">
+                    <span class="env-back"></span><span class="env-letter"></span><span class="env-front"></span><span class="env-flap"></span>
+                    <span class="env-seal"><svg><use href="#heart"/></svg></span>
+                    <span id="ltTo" class="lt-to font-script"></span>
+                </span>
+                <span class="lt-hint font-hand">tap to open ♥</span>
+            </button>
+        </div>
+        <article class="letter-paper" id="letterPaper">
+            <svg class="l-heart l-h1"><use href="#heart"/></svg>
+            <svg class="l-heart l-h2"><use href="#heart"/></svg>
+            <svg class="l-heart l-h3"><use href="#heart"/></svg>
+            <p class="letter-date" id="letterDate"></p>
+            <p class="letter-greeting" id="letterGreeting"></p>
+            <div id="letterBody" class="letter-body"></div>
+            <div class="letter-sign">
+                <p id="signLine" class="font-hand text-xl"></p>
+                <p id="signName" class="signature"></p>
+            </div>
+        </article>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 06 GALLERY ============ -->
+<section id="gallery" class="section">
+    <div class="mx-auto max-w-6xl px-5">
+        <div class="text-center mb-12 reveal">
+            <p id="gallerySub" class="eyebrow"></p>
+            <h2 id="galleryTitle" class="font-display text-3xl md:text-5xl mt-2"></h2>
+        </div>
+        <div id="galleryGrid" class="masonry"></div>
+    </div>
+</section>
+
+<!-- ============ 07c OPEN WHEN... LETTERS ============ -->
+<section id="openwhen" class="section">
+    <div class="mx-auto max-w-5xl px-5">
+        <div class="text-center mb-12 reveal">
+            <p id="owSub" class="eyebrow"></p>
+            <h2 id="owTitle" class="font-display text-3xl md:text-5xl mt-2"></h2>
+        </div>
+        <div id="owGrid" class="ow-grid"></div>
+    </div>
+</section>
+
+<!-- ============ 07d LOVE COUPONS ============ -->
+<section id="coupons" class="section">
+    <div class="mx-auto max-w-5xl px-5">
+        <div class="text-center mb-12 reveal">
+            <p id="couponsSub" class="eyebrow"></p>
+            <h2 id="couponsTitle" class="font-display text-3xl md:text-5xl mt-2"></h2>
+        </div>
+        <div id="couponsGrid" class="coupons"></div>
+        <p id="couponsNote" class="text-center font-hand text-lg text-muted mt-10"></p>
+    </div>
+</section>
+
+<!-- ============ 07e SCRATCH CARDS (Kartu Gosok) ============ -->
+<section id="scratch" class="section">
+    <div class="mx-auto max-w-5xl px-5">
+        <div class="text-center mb-12 reveal">
+            <p id="scratchSub" class="eyebrow"></p>
+            <h2 id="scratchTitle" class="font-display text-3xl md:text-5xl mt-2"></h2>
+            <p id="scratchProgress" class="sc-progress font-hand" aria-live="polite"></p>
+        </div>
+        <div id="scratchGrid" class="sc-grid"></div>
+        <p id="scratchNote" class="text-center font-hand text-lg text-muted mt-10"></p>
+    </div>
+</section>
+
+<!-- ============ 08 SECRET MESSAGE ============ -->
+<section id="secret" class="section">
+    <div class="mx-auto max-w-2xl px-5 text-center reveal">
+        <svg class="w-14 h-14 mx-auto text-ruby heartbeat"><use href="#heart"/></svg>
+        <p class="eyebrow mt-5">shhh...</p>
+        <h2 class="font-display text-3xl md:text-4xl mt-2">There's something only you can read</h2>
+        <button type="button" id="btnSecret" class="btn btn-solid mt-8"></button>
+    </div>
+</section>
+
+<!-- ============ 09 FINAL SURPRISE ============ -->
+<section id="final" class="section final">
+    <div class="mx-auto max-w-3xl px-5 text-center reveal">
+        <p id="finalEyebrow" class="font-script text-4xl md:text-5xl text-blush"></p>
+        <p id="finalLine" class="font-display italic text-2xl md:text-4xl leading-snug mt-5"></p>
+        <button type="button" id="finalHeart" class="big-heart" aria-label="Tap the heart for one last surprise">
+            <svg><use href="#heart"/></svg>
+            <span class="font-hand">tap me</span>
+        </button>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+    <p class="font-hand text-lg">made with <span class="text-ruby">♥</span> by <span id="footFrom"></span></p>
+    <p class="text-xs text-muted mt-1">for <span id="footName"></span> · happy birthday</p>
+</footer>
+
+<!-- ============ LIGHTBOX ============ -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+    <button type="button" class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="Previous photo"><svg><use href="#i-prev"/></svg></button>
+    <figure class="lb-fig">
+        <div class="lb-frame"><img id="lbImg" alt=""></div>
+        <figcaption><span id="lbCap" class="font-hand text-xl"></span><span id="lbCount" class="lb-count"></span></figcaption>
+    </figure>
+    <button type="button" class="lb-nav lb-next" id="lbNext" aria-label="Next photo"><svg><use href="#i-next"/></svg></button>
+</div>
+
+<!-- ============ SECRET MODAL ============ -->
+<div id="secretModal" class="modal" role="dialog" aria-modal="true" aria-label="Secret message" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-body">
+        <button type="button" class="modal-x" data-close aria-label="Close">&times;</button>
+        <div class="env-stage" id="envStage">
+            <div class="envelope">
+                <div class="env-back"></div>
+                <div class="env-letter"></div>
+                <div class="env-front"></div>
+                <div class="env-flap"></div>
+                <div class="env-seal"><svg><use href="#heart"/></svg></div>
+            </div>
+        </div>
+        <div class="secret-paper" id="secretPaper">
+            <p id="secretTitle" class="font-script text-3xl text-ruby"></p>
+            <div id="secretText" class="secret-text"></div>
+            <p id="secretSign" class="signature mt-4"></p>
+        </div>
+    </div>
+</div>
+
+<!-- ============ OPEN WHEN MODAL ============ -->
+<div id="owModal" class="modal" role="dialog" aria-modal="true" aria-label="Open when letter" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-body">
+        <button type="button" class="modal-x" data-close aria-label="Close">&times;</button>
+        <div class="env-stage">
+            <div class="envelope">
+                <div class="env-back"></div>
+                <div class="env-letter"></div>
+                <div class="env-front"></div>
+                <div class="env-flap"></div>
+                <div class="env-seal"><svg><use href="#heart"/></svg></div>
+            </div>
+        </div>
+        <div class="secret-paper">
+            <p id="owPaperTitle" class="font-script text-3xl text-ruby"></p>
+            <div id="owPaperText" class="secret-text"></div>
+            <p id="owPaperSign" class="signature mt-4"></p>
+        </div>
+    </div>
+</div>
+
+<!-- ============ FINAL MODAL ============ -->
+<div id="finalModal" class="modal" role="dialog" aria-modal="true" aria-label="Final surprise" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-body final-card">
+        <button type="button" class="modal-x" data-close aria-label="Close">&times;</button>
+        <div id="sparkles" class="sparkles" aria-hidden="true"></div>
+        <svg class="w-16 h-16 mx-auto text-ruby heartbeat"><use href="#heart"/></svg>
+        <h3 id="finalModalTitle" class="font-display text-3xl md:text-4xl mt-4"></h3>
+        <div id="finalMessage" class="font-hand text-xl md:text-2xl leading-relaxed mt-5 text-cream/95"></div>
+    </div>
+</div>
+
+<!-- ============ FLOATING MUSIC CONTROL ============ -->
+<button type="button" id="miniPlayer" class="mini-player" aria-label="Play or pause music">
+    <span class="mini-disc"><i></i></span>
+    <span id="miniTitle" class="mini-title">play our songs</span>
+    <svg class="mini-ico"><use id="miniIcon" href="#i-play"/></svg>
+</button>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/music-player.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
